@@ -1,7 +1,6 @@
-# use CircleCI 2.0
 version: 2
 jobs:
-  feature-express:
+  build:
     docker:
       - image: circleci/node:8
 
