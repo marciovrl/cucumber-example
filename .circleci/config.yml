@@ -54,8 +54,8 @@ jobs:
           command: aws s3 ls
 
       - run:
-          name: deploy-s3
-          command: cd /repo/feature-express/.feature-express/build/ && ls && cat index.html
+          name: cat-index
+          command: cd feature-express/.feature-express/build/ && ls && cat index.html
 
       - run:
           name: deploy-s3
