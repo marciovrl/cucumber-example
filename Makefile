@@ -14,7 +14,9 @@ feature-express:
 
 .PHONY: build-feature-express
 build-feature-express:
-	cd feature-express 
+	@echo "not implemented"
+
+	# cd feature-express 
 	# && npm install && npm run build-feature-express
 
 .PHONY: run-test
