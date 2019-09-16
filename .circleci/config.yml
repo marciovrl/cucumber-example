@@ -43,14 +43,14 @@ jobs:
 
       - run:
           name: teste
-          command: cd feature-express/.feature-express/ && ls
+          command: cd feature-express/.feature-express/build/ && ls
 
-      # - deploy:
-      #     name: deploy-s3
-      #     command: |
-      #       if [ "${CIRCLE_BRANCH}" == "master" ]; then
-      #         aws s3 sync /repo/feature-express/.feature-express s3://vaskohandmade/ --delete
-      #       fi
+      - deploy:
+          name: deploy-s3
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              aws s3 sync /repo/feature-express/.feature-express/build/ s3://example-cucumber// --delete
+            fi
 
 workflows:
   version: 2
