@@ -24,11 +24,7 @@ jobs:
 
       - run:
           name: install-dependencies-dois
-          command: cd feature-express/
-
-      - run:
-          name: install-dependencies-tres
-          command: ls
+          command: cd feature-express && ls
 
       - save_cache:
           paths:
