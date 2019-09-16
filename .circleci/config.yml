@@ -10,12 +10,12 @@ jobs:
       - checkout
 
       - run:
-        name: install-dependencies
-        command: bundler install
+          name: install-dependencies
+          command: bundler install
 
       - run:
-        name: execute-test
-        command: cucumber
+          name: execute-test
+          command: cucumber
 
   # test:
   #   docker:
