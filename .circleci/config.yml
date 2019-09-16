@@ -44,7 +44,7 @@ jobs:
       - deploy:
           name: deploy-s3
           command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+            if [ "${CIRCLE_BRANCH}" == "develop" ]; then
               aws s3 sync /repo/feature-express/.feature-express/build/ s3://example-cucumber// --delete
             fi
 
