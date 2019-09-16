@@ -48,9 +48,9 @@ jobs:
       - run:
           name: deploy-s3
           command: |
-          if [ "${CIRCLE_BRANCH}" == "master" ]; then
-            aws s3 sync feature-express/.feature-express/build/ s3://example-cucumber --delete
-          fi
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              aws s3 sync feature-express/.feature-express/build/ s3://example-cucumber --delete
+            fi
 
 workflows:
   version: 2
