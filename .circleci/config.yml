@@ -1,39 +1,18 @@
-# Ruby CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-ruby/ for more details
+# CircleCI 2.0 configuration file
 #
 version: 2
 jobs:
-  build-test:
+  build:
     docker:
-      # specify the version you desire here
-      - image: circleci/ruby:2.4.1-node-browsers
+      - image: yoant/circleci-node-ruby
 
     working_directory: ~/repo
 
     steps:
       - checkout
 
-      # run tests!
-      - run:
-          name: run tests
-          command: |
-            make test
+      # Cucumber
+      - run: make test
 
-# Javascript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-  build-feature-express:
-    docker:
-      # specify the version you desire here
-      - image: circleci/node:7.10
-
-    working_directory: ~/repo/
-
-    steps:
-      - checkout
-
-      - run:
-          name: generator html
-          command: |
-            build-feature-express
+      # Feature-express
+      - run: build-feature-express
