@@ -14,7 +14,8 @@ feature-express:
 
 .PHONY: build-feature-express
 build-feature-express:
-	cd feature-express && npm install && npm run build-feature-express
+	cd feature-express && npm install 
+	# && npm run build-feature-express
 
 .PHONY: run-test
 run-test:
