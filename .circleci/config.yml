@@ -12,10 +12,12 @@ jobs:
           name: update-npm
           command: 'sudo npm install -g npm@latest'
 
-      # - run:
-      #     name: install-dependencies
-      #     command: npm install
+      - run:
+          name: install-dependencies
+          paths:
+            - ./feature-express
+          command: npm install
 
-      - run: # run tests
-          name: feature-express
-          command: make build-feature-express
+      # - run: # run tests
+      #     name: feature-express
+      #     command: make build-feature-express
