@@ -1,12 +1,29 @@
 version: 2
 jobs:
-  build:
+  cucumber:
     docker:
-      - image: circleci/node:8
+      - image: circleci/ruby:2.4-node
 
     working_directory: ~/repo/
 
     steps:
+      - checkout
+
+      - run:
+          name: install-dependencies
+          command: bundler install
+
+      - run:
+          name: execute-test
+          command: cucumber
+
+  feature-express:
+      docker:
+      - image: circleci/node:8
+
+      working_directory: ~/repo/
+
+          steps:
       - checkout
 
       - run:
@@ -16,3 +33,11 @@ jobs:
       - run:
           name: build-feature-express
           command: cd feature-express && npm run build-feature-express
+
+
+workflows:
+  version: 2
+    build_and_test:
+      jobs:
+        - cucumber
+        - feature-express
