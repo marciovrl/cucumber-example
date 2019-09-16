@@ -44,12 +44,15 @@ jobs:
   merge-master:
     docker:
       - image: circleci/node:8.9.4
-    working_directory: ~/cicd-circleci
+
+    working_directory: ~/repo/
 
     steps:
       - checkout
 
-      - command: # shell
+      - run:
+          name: merge master
+          command: ls
 
 workflows:
   version: 2
