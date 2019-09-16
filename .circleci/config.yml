@@ -42,12 +42,16 @@ jobs:
           command: cd feature-express && npm run build-feature-express
 
       - run:
-          name: install-awscli"
+          name: install-awscli
           command: sudo apt-get -y -qq install awscli
 
       - run: 
-          name: "show credentials"
-          command: "aws configure list"
+          name: show credentials
+          command: aws configure list
+
+      - run:
+          name: list bcu
+          command: aws s3 ls
  
 
       # - deploy:
