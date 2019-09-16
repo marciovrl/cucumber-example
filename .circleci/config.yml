@@ -42,8 +42,15 @@ jobs:
           command: cd feature-express && npm run build-feature-express
 
       - run:
-          name: deploy-s3
-          command: echo $AWS_BUCKET
+          name: teste
+          command: cd feature-express /.feature-express && ls
+
+      # - deploy:
+      #     name: deploy-s3
+      #     command: |
+      #       if [ "${CIRCLE_BRANCH}" == "master" ]; then
+      #         aws s3 sync /repo/feature-express/.feature-express s3://vaskohandmade/ --delete
+      #       fi
 
 workflows:
   version: 2
