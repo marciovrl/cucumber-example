@@ -1,18 +1,18 @@
-# CircleCI 2.0 configuration file
-#
 version: 2
 jobs:
   build:
     docker:
-      - image: yoant/circleci-node-ruby
+      - image: circleci/node:8
 
-    working_directory: ~/repo
+    working_directory: ~/repo/
 
     steps:
       - checkout
 
-      # Cucumber
-      - run: make test
+      - run:
+          name: install-dependencies
+          command: cd feature-express && npm install
 
-      # Feature-express
-      - run: build-feature-express
+      - run:
+          name: build-feature-express
+          command: cd feature-express && npm run build-feature-express
