@@ -41,26 +41,13 @@ jobs:
           name: build-feature-express
           command: cd feature-express && npm run build-feature-express
 
-  merge-master:
-    docker:
-      - image: circleci/node:8.9.4
-
-    working_directory: ~/repo/
-
-    steps:
-      - checkout
-
       - run:
-          name: merge master
-          command: ls
+        name: deploy-s3
+        command: echo $AWS_BUCKET
 
 workflows:
   version: 2
-  test_and_feature-express_and_deploy-master:
+  test_and_feature-express:
     jobs:
       - test
       - feature-express
-      - deploy-master:
-        requires:
-          - test
-          - feature-express
