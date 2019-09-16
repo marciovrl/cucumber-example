@@ -41,10 +41,18 @@ jobs:
           name: build-feature-express
           command: cd feature-express && npm run build-feature-express
 
+  deploy-master:
+    requires:
+      - test
+      - feature-express
+    filters:
+      branches:
+        only: master
 
 workflows:
   version: 2
-  test_and_feature-express:
+  test_and_feature-express_and_deploy-master:
     jobs:
       - test
       - feature-express
+      - deploy-master
