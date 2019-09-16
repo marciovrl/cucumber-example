@@ -1,0 +1,15 @@
+{
+  "name": "feature-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "feature-express": "./node_modules/.bin/feature-express ../features/ en",
+    "build-feature-express": "./node_modules/.bin/feature-express build ../features/ en"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "feature-express": "^0.5.12"
+  }
+}
