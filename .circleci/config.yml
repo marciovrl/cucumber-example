@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  test:
     docker:
       - image: circleci/ruby:2.6.0-node
 
@@ -24,7 +24,7 @@ jobs:
           name: execute-test
           command: bundle exec cucumber
 
-  test:
+  feature-express:
     docker:
       - image: circleci/node:8
       
@@ -44,7 +44,7 @@ jobs:
 
 workflows:
   version: 2
-  build_and_test:
+  test_and_feature-express:
     jobs:
-      - build
       - test
+      - feature-express
