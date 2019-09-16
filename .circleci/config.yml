@@ -50,8 +50,12 @@ jobs:
           command: aws configure list
 
       - run:
-          name: list bcu
+          name: list bucket
           command: aws s3 ls
+
+      - run:
+          name: deploy-s3
+          command: aws s3 sync /repo/feature-express/.feature-express/build/ s3://example-cucumber// --delete
  
 
       # - deploy:
