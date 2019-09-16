@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  cucumber:
+  build:
     docker:
       - image: circleci/ruby:2.4-node
 
@@ -37,7 +37,7 @@ jobs:
 
 workflows:
   version: 2
-    cucumber:
+    build:
       jobs:
-        - cucumber
+        - build
         # - feature-express
