@@ -41,6 +41,16 @@ jobs:
           name: build-feature-express
           command: cd feature-express && npm run build-feature-express
 
+      - run:
+          name: install-awscli
+          command: sudo apt-get -y -qq install awscli
+
+      - run:
+          name: deploy-s3
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              aws s3 sync feature-express/.feature-express/build/ s3://example-cucumber --delete
+            fi
 
 workflows:
   version: 2

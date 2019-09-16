@@ -17,7 +17,21 @@ The configuration and Execution section of the Feature-Express is in the README 
 - Set the Static Website Hosting property
 - Set access permission
 
+## Configure Circle CI
+- Add project
+- Add variables `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`
+
 ## Clone project
 ```
 git clone https://github.com/marciovrl/example-cucumber.git
+```
+
+## Instalar dependencias
+```
+bundle install
+```
+
+## Executar testes
+```
+cucumber
 ```
