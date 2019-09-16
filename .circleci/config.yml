@@ -5,7 +5,7 @@ jobs:
     docker:
       - image: circleci/node:8
 
-    working_directory: ~/repo
+    working_directory: ~/repo/feature-express
 
     steps:
       - checkout
@@ -18,8 +18,8 @@ jobs:
 
       - run:
           name: install-dependencies
-          paths:
-            - ./feature-express
+          # paths:
+          #   - ./feature-express
           command: npm install
 
       - save_cache:
