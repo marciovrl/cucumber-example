@@ -41,12 +41,21 @@ jobs:
           name: build-feature-express
           command: cd feature-express && npm run build-feature-express
 
-      - deploy:
-          name: deploy-s3
-          command: |
-            if [ "${CIRCLE_BRANCH}" == "develop" ]; then
-              aws s3 sync /repo/feature-express/.feature-express/build/ s3://example-cucumber// --delete
-            fi
+      - run:
+          name: install-awscli"
+          command: apt-get -y -qq install awscli
+
+      - run: 
+          name: "show credentials"
+          command: "aws configure list"
+ 
+
+      # - deploy:
+      #     name: deploy-s3
+      #     command: |
+      #       if [ "${CIRCLE_BRANCH}" == "develop" ]; then
+      #         aws s3 sync /repo/feature-express/.feature-express/build/ s3://example-cucumber// --delete
+      #       fi
 
 workflows:
   version: 2
