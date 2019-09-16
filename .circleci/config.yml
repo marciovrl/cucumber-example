@@ -24,7 +24,7 @@ jobs:
 
       - run:
           name: install-dependencies-dois
-          command: cd feature-express && ls
+          command: cd feature-express && npm install
 
       - save_cache:
           paths:
