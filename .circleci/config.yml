@@ -43,7 +43,7 @@ jobs:
 
       - run:
           name: install-awscli"
-          command: apt-get -y -qq install awscli
+          command: sudo apt-get -y -qq install awscli
 
       - run: 
           name: "show credentials"
