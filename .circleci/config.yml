@@ -43,7 +43,7 @@ jobs:
 
       - run:
           name: teste
-          command: cd feature-express /.feature-express && ls
+          command: cd feature-express/.feature-express/ && ls
 
       # - deploy:
       #     name: deploy-s3
