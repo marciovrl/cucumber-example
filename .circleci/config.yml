@@ -16,11 +16,11 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run: npm install
-          # name: install-dependencies
-          # paths:
-          #   - ./feature-express
-          # command: ./feature-express npm install
+      - run:
+          name: install-dependencies
+          paths:
+            - ./feature-express
+          command: npm install
 
       - save_cache:
           paths:
