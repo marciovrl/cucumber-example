@@ -11,11 +11,11 @@ jobs:
 
       - run:
           name: install-dependencies
-          command: bundler install
+          command: bundle install --path vendor/bundle
 
       - run:
           name: execute-test
-          command: cucumber
+          command: bundle exec cucumber
 
   # test:
   #   docker:
