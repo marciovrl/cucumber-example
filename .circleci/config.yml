@@ -56,6 +56,6 @@ workflows:
     jobs:
       - test
       - feature-express:
-        filters:
-          branches:
-            only: master
+          filters:
+            branches:
+              only: master
