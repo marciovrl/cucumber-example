@@ -27,16 +27,16 @@ jobs:
   feature-express:
     docker:
       - image: circleci/node:8
-      
+
     working_directory: ~/repo/
-    
+
     steps:
       - checkout
-      
+
       - run:
           name: install-dependencies
           command: cd feature-express && npm install
-        
+
       - run:
           name: build-feature-express
           command: cd feature-express && npm run build-feature-express
